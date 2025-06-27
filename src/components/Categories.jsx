@@ -74,7 +74,7 @@ const titleHoverStyle = {
   textShadow: '0 2px 12px #fff8',
 };
 
-const slugify = (str) => stcdr.toLowerCase().replace(/[^a-zçğıöşü0-9]+/g, '-').replace(/^-+|-+$/g, '').replace(/-+/g, '-');
+const slugify = (str) => str.toLowerCase().replace(/[^a-zçğıöşü0-9]+/g, '-').replace(/^-+|-+$/g, '').replace(/-+/g, '-');
 
 const Categories = () => {
   const [hovered, setHovered] = React.useState(null);
