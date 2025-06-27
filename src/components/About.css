@@ -1,4 +1,4 @@
-/* About Page Modern Styles */
+/* === Genel Alan (Section) === */
 .about-section {
   background: #f7faff;
   color: #1a237e;
@@ -6,10 +6,11 @@
   padding-bottom: 40px;
 }
 
+/* === Hero Başlık ve Tanıtım === */
 .about-hero {
   max-width: 900px;
   margin: 0 auto;
-  padding: 56px 16px 32px 16px;
+  padding: 56px 16px 32px;
   text-align: center;
 }
 .about-hero h1 {
@@ -25,46 +26,49 @@
   margin: 0 auto;
 }
 
+/* === Kart Grubu === */
 .about-cards {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 96px;
-  padding: 24px 16px 0 16px;
+  padding: 24px 16px 0;
 }
+
+/* === Tek Kart (sol-sağ yönlü) === */
 .about-card {
   display: flex;
+  align-items: center;
+  gap: 40px;
   background: linear-gradient(135deg, #5b7c8b 0%, #325a6d 100%);
   border-radius: 18px;
   box-shadow: 0 4px 24px #b3c6e6aa;
-  overflow: visible;
-  align-items: center;
-  gap: 40px;
-  padding: 0;
-  flex-wrap: wrap;
-  position: relative;
   min-height: 320px;
   height: 320px;
+  position: relative;
+  flex-wrap: wrap;
+  overflow: visible;
 }
 .about-card.reverse {
   flex-direction: row-reverse;
 }
+
+/* === Kart Görsel Alanı === */
 .about-card-img {
   flex: 0 0 380px;
   min-width: 260px;
   max-width: 420px;
   height: 380px;
-  align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #e3e9f7;
   transform: translate(-20px, -28px);
-  z-index: 2;
   border-radius: 32px;
   box-shadow: 0 8px 32px #b3c6e6aa;
   overflow: hidden;
+  z-index: 2;
 }
 .about-card.reverse .about-card-img {
   transform: translate(20px, -28px);
@@ -76,6 +80,8 @@
   border-radius: 24px;
   box-shadow: 0 2px 12px #e3e9f7;
 }
+
+/* === Kart İçerik Alanı === */
 .about-card-content {
   flex: 1 1 0;
   min-width: 220px;
@@ -97,16 +103,18 @@
   line-height: 1.7;
 }
 
+/* === Misyon & Vizyon === */
 .about-mission-vision {
   max-width: 1100px;
-  margin: 64px auto 0 auto;
+  margin: 64px auto 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 64px;
   justify-content: center;
   padding: 0 16px;
-  flex-wrap: wrap;
 }
-.about-mission, .about-vision {
+.about-mission,
+.about-vision {
   background: linear-gradient(90deg, #ff5252 0%, #b71c1c 100%);
   border-radius: 16px;
   box-shadow: 0 2px 12px #b3c6e6aa;
@@ -115,25 +123,29 @@
   min-width: 260px;
   max-width: 480px;
 }
-.about-mission h3, .about-vision h3 {
-  color: #000000;
+.about-mission h3,
+.about-vision h3 {
+  color: #000;
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 18px;
   letter-spacing: 1px;
 }
-.about-mission p, .about-vision p {
+.about-mission p,
+.about-vision p {
   color: #fff;
   font-size: 1.08rem;
   line-height: 1.7;
   font-weight: 500;
 }
 
+/* === Responsive: Tablet (max-width: 900px) === */
 @media (max-width: 900px) {
   .about-cards {
     gap: 24px;
   }
-  .about-card, .about-card.reverse {
+  .about-card,
+  .about-card.reverse {
     flex-direction: column;
     gap: 0;
     align-items: stretch;
@@ -146,13 +158,9 @@
     height: 220px;
     max-width: 100%;
     min-width: 0;
-    box-shadow: 0 2px 12px #b3c6e6aa;
     border-radius: 18px;
-    align-self: stretch;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
+    box-shadow: 0 2px 12px #b3c6e6aa;
+    transform: none !important;
   }
   .about-card-content {
     padding: 24px 12px;
@@ -163,6 +171,7 @@
   }
 }
 
+/* === Responsive: Mobil (max-width: 600px) === */
 @media (max-width: 600px) {
   .about-hero h1 {
     font-size: 1.5rem;
@@ -170,14 +179,16 @@
   .about-card-content h2 {
     font-size: 1.1rem;
   }
-  .about-mission, .about-vision {
+  .about-mission,
+  .about-vision {
     padding: 18px 8px;
   }
 }
 
+/* === Responsive: Küçük Mobil (max-width: 480px) === */
 @media (max-width: 480px) {
   .about-hero {
-    padding: 24px 4px 16px 4px;
+    padding: 24px 4px 16px;
   }
   .about-hero h1 {
     font-size: 1.05rem;
@@ -192,7 +203,8 @@
   .about-card-content {
     padding: 10px 4px;
   }
-  .about-mission, .about-vision {
+  .about-mission,
+  .about-vision {
     padding: 8px 2px;
     min-width: 0;
     max-width: 100%;
@@ -203,6 +215,7 @@
   }
 }
 
+/* === Sayfa Scroll Animasyonu === */
 .about-animated-card {
   opacity: 0;
   transform: translateY(40px);
@@ -211,4 +224,4 @@
 .about-animated-card.show {
   opacity: 1;
   transform: none;
-} 
+}

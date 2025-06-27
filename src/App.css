@@ -37,6 +37,27 @@
   padding: 2em;
 }
 
+/* 📱 Mobil uyum (Responsive) */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 4em;
+    padding: 1em;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .read-the-docs {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
 .read-the-docs {
   color: #888;
 }
