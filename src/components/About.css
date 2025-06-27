@@ -107,7 +107,7 @@
   flex-wrap: wrap;
 }
 .about-mission, .about-vision {
-  background: linear-gradient(135deg, #5b7c8b 0%, #325a6d 100%);
+  background: linear-gradient(90deg, #ff5252 0%, #b71c1c 100%);
   border-radius: 16px;
   box-shadow: 0 2px 12px #b3c6e6aa;
   padding: 32px 28px;
@@ -116,16 +116,17 @@
   max-width: 480px;
 }
 .about-mission h3, .about-vision h3 {
-  color: #fff;
+  color: #000000;
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 18px;
   letter-spacing: 1px;
 }
 .about-mission p, .about-vision p {
-  color: #e0e0e0;
+  color: #fff;
   font-size: 1.08rem;
   line-height: 1.7;
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {

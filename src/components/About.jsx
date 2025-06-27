@@ -17,7 +17,7 @@ const About = () => {
               observer.disconnect();
             }
           },
-          { threshold: 1.0 }
+          { threshold: 0.5 }
         );
         observer.observe(ref);
         observers.push(observer);
@@ -33,7 +33,7 @@ const About = () => {
               observer.disconnect();
             }
           },
-          { threshold: 1.0 }
+          { threshold: 0.5 }
         );
         observer.observe(ref);
         observers.push(observer);
@@ -53,6 +53,7 @@ const About = () => {
           <b>FABRİK Tekstil</b>, 28 yıllık derin birikimi ve zengin tecrübesiyle, personel kıyafetleri ve tekstil promosyon ürünleri alanında lider bir marka olarak karşınıza çıkar. İzmir ve Manisa'da bulunan modern tesislerimizde, siz değerli müşterilerimizin kurumsal kimliğini yansıtacak, işlevsel, estetik, kaliteli ve ekonomik iş kıyafetleri ve promosyon tekstil ürünleri üretmek için durmaksızın çalışıyoruz.
         </p>
       </div>
+      
       {/* Info Cards */}
       <div className="about-cards">
         {[{

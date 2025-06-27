@@ -141,7 +141,7 @@ const Catalog = () => {
             {processSteps.map((step, i) => (
               <div
                 key={i}
-                className="catalog-process-card catalog-animated-card"
+                className={`catalog-process-card catalog-animated-card card${i+1}`}
                 ref={el => processCardRefs.current[i] = el}
               >
                 <div className="catalog-process-icon">{step.icon}</div>
@@ -151,18 +151,66 @@ const Catalog = () => {
             ))}
           </div>
         </section>
+        <br></br>
+        {/* SVG Şerit */}
+        <div style={{width: '100%', display: 'flex', justifyContent: 'center', background: 'transparent', margin: '0 0 0 0'}}>
+          <svg width="100%" height="60" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{maxWidth: '1440px', minWidth: '320px', display: 'block'}}>
+            <defs>
+              <linearGradient id="catalogWave" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#f7faff" />
+                <stop offset="30%" stopColor="#b3d8fd" />
+                <stop offset="60%" stopColor="#7fc7fa" />
+                <stop offset="85%" stopColor="#aee7ff" />
+                <stop offset="100%" stopColor="#f7faff" />
+              </linearGradient>
+            </defs>
+            <path d="M0 30 Q 360 60 720 30 T 1440 30 V60 H0V30Z" fill="url(#catalogWave)"/>
+          </svg>
+        </div>
+        <br></br>
+        <br></br>
         {/* Kategoriler */}
         <Categories />
+        {/* SVG Şerit */}
+        <div style={{width: '100%', display: 'flex', justifyContent: 'center', background: 'transparent', margin: '0 0 0 0'}}>
+          <svg width="100%" height="60" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{maxWidth: '1440px', minWidth: '320px', display: 'block'}}>
+            <defs>
+              <linearGradient id="catalogWave" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#f7faff" />
+                <stop offset="30%" stopColor="#b3d8fd" />
+                <stop offset="60%" stopColor="#7fc7fa" />
+                <stop offset="85%" stopColor="#aee7ff" />
+                <stop offset="100%" stopColor="#f7faff" />
+              </linearGradient>
+            </defs>
+            <path d="M0 30 Q 360 60 720 30 T 1440 30 V60 H0V30Z" fill="url(#catalogWave)"/>
+          </svg>
+        </div>
         {/* Neden Özel Üretim ve SSS Bölümü */}
         <section style={{ maxWidth: '900px', margin: '40px auto', padding: '0 16px', fontFamily: 'inherit' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '18px' }}>Neden Özel Üretim Tercih Edilmeli?</h2>
-          <ul style={{ fontSize: '1.1rem', marginBottom: '32px' }}>
-            <li><b>Kurumsal Kimlikle Uyum:</b> Markanızın kimliğine özel tasarımlarla, kurumsal imajınızı güçlendirirsiniz.</li>
-            <li><b>Rekabet Avantajı:</b> Özgün ve kaliteli iş kıyafetleri ile sektördeki diğer firmalardan ayrılırsınız.</li>
-            <li><b>Çalışan Memnuniyeti:</b> Konforlu ve işlevsel kıyafetler, çalışanlarınızın memnuniyetini ve verimliliğini artırır.</li>
-          </ul>
-          <h2 style={{ textAlign: 'center', marginBottom: '18px' }}>Sıkça Sorulan Sorular</h2>
-          <div style={{ fontSize: '1.08rem', lineHeight: '1.7' }}>
+          <div style={{
+            background: 'linear-gradient(90deg, #b6c6e2 0%, #fff 100%)',
+            borderRadius: 18,
+            padding: '24px 18px 18px 18px',
+            marginBottom: 32,
+            boxShadow: 'none',
+          }}>
+            <h2 style={{ textAlign: 'center', marginBottom: '18px' }}>Neden Özel Üretim Tercih Edilmeli?</h2>
+            <ul style={{ fontSize: '1.1rem', marginBottom: 0 }}>
+              <li><b>Kurumsal Kimlikle Uyum:</b> Markanızın kimliğine özel tasarımlarla, kurumsal imajınızı güçlendirirsiniz.</li>
+              <li><b>Rekabet Avantajı:</b> Özgün ve kaliteli iş kıyafetleri ile sektördeki diğer firmalardan ayrılırsınız.</li>
+              <li><b>Çalışan Memnuniyeti:</b> Konforlu ve işlevsel kıyafetler, çalışanlarınızın memnuniyetini ve verimliliğini artırır.</li>
+            </ul>
+          </div>
+          <div style={{
+            background: 'linear-gradient(270deg, #b6c6e2 0%, #fff 100%)',
+            borderRadius: 18,
+            padding: '24px 18px 18px 18px',
+            fontSize: '1.08rem',
+            lineHeight: '1.7',
+            marginBottom: 32,
+          }}>
+            <h2 style={{ textAlign: 'center', marginBottom: '18px' }}>Sıkça Sorulan Sorular</h2>
             <p><b>1. Özel üretim iş kıyafetleri ve promosyon tekstilleri siparişi vermek istiyorum. Süreç nasıl işliyor?</b></p>
             <p>Özel üretim sürecimiz, tasarım danışmanlığı ile başlar. Sizinle markanızın ihtiyaçlarını ve vizyonunu detaylı bir şekilde ele alırız. Ardından malzeme seçimi, numune üretimi, kalite kontrol ve teslimat aşamalarını içeren bir dizi adımı takip ederiz. Bu süreç, markanızın özgün ve kaliteli iş kıyafetleri ve promosyon tekstilleri ile öne çıkmasını sağlar.</p>
             <p><b>2. Minimum sipariş miktarınız nedir?</b></p>

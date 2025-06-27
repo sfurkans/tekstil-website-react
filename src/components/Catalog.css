@@ -13,7 +13,7 @@
   border-radius: 0;
 }
 .catalog-hero-box {
-  background: #b0bed0;
+  background: linear-gradient(90deg, #e3ecfa 0%, #7fa4c6 60%, #4a6b8a 100%);
   color: #1851a3;
   flex: 0 0 35%;
   min-width: 0;
@@ -42,13 +42,13 @@
   font-weight: 700;
   margin-bottom: 16px;
   text-align: center;
-  color: #1851a3;
+  color: #174ea6;
 }
 .catalog-hero-box p {
   font-size: 1.1rem;
   text-align: center;
   max-width: 340px;
-  color: #234;
+  color: #18324d;
 }
 .catalog-hero-img {
   flex: 1 1 65%;
@@ -317,4 +317,10 @@
 .catalog-animated-card.show {
   opacity: 1 !important;
   transform: none !important;
-} 
+}
+
+.card1 { background: #e3f2fd !important; }
+.card2 { background: #fce4ec !important; }
+.card3 { background: #e8f5e9 !important; }
+.card4 { background: #fff3e0 !important; }
+.card5 { background: #ede7f6 !important; } 

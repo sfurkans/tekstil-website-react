@@ -137,8 +137,15 @@ const Header = () => {
       <nav className="header-nav">
         {/* Logo ve altına TEKSTİL */}
         <div className="header-logo" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 180}}>
-          <Link to="/" style={{display: 'flex', alignItems: 'center', gap: 8}}>
-            <span style={{fontWeight: 600, fontSize: '2.1rem', color: '#fff', fontFamily: 'inherit'}}>Irmak</span>
+          <Link to="/" style={{display: 'flex', alignItems: 'center', gap: 16}}>
+            {/* Büyük makas sembolü */}
+            <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: 'inline', verticalAlign: 'middle'}}>
+              <circle cx="15" cy="33" r="6" stroke="#ffd600" strokeWidth="3" fill="none"/>
+              <circle cx="33" cy="33" r="6" stroke="#ffd600" strokeWidth="3" fill="none"/>
+              <line x1="18" y1="30" x2="40" y2="8" stroke="#ffd600" strokeWidth="3"/>
+              <line x1="30" y1="30" x2="8" y2="8" stroke="#ffd600" strokeWidth="3"/>
+            </svg>
+            <span style={{fontWeight: 600, fontSize: '2.5rem', color: 'yellow', fontFamily: 'serif'}}>Irmak</span>
           </Link>
           <span style={{fontSize: '0.9rem', color: '#e0e0e0', letterSpacing: 2, marginTop: 2}}>TEKSTİL</span>
         </div>
@@ -177,7 +184,7 @@ const Header = () => {
                       top: 'calc(100% + 10px)',
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      background: 'rgba(255,255,255,0.98)',
+                      background: 'linear-gradient(120deg, #b6d0e2 0%, #ffb3b3 50%, #4a6b8a 100%)',
                       borderRadius: 18,
                       boxShadow: '0 8px 32px 0 #2344, 0 1.5px 0 #e3e9f7',
                       padding: '18px 0',
