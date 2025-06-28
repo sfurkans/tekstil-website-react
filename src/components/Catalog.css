@@ -246,17 +246,17 @@
     width: 32px;
     height: 32px;
   }
-  .catalog-hero-img-modern,
   .catalog-hero-img,
+  .catalog-hero-img-modern,
   .catalog-hero-gallery {
     height: 140px;
     max-height: 140px;
+    padding: 0 !important;
+    justify-content: flex-start !important;
   }
-  .catalog-img-wrapper {
-    border-radius: 16px 16px 0 0;
-  }
-  .catalog-hero-gallery-img {
-    min-height: 40px;
+  .catalog-hero-img img {
+    margin: 0 !important;
+    border-radius: 0 !important;
   }
 }
 
@@ -281,6 +281,12 @@
   .catalog-hero-gallery {
     height: 120px;
     max-height: 120px;
+    padding: 0 !important;
+    justify-content: flex-start !important;
+  }
+  .catalog-hero-img img {
+    margin: 0 !important;
+    border-radius: 0 !important;
   }
   .catalog-img-wrapper {
     border-radius: 12px 12px 0 0;

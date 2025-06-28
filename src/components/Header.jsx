@@ -35,6 +35,7 @@ const slugify = (str) =>
 const Header = () => {
   const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownTimeout = React.useRef();
 
   const handleDropdownEnter = () => {
@@ -112,12 +113,16 @@ const Header = () => {
             min-height: 50px;
           }
           .header-menu {
-            gap: 18px;
-            font-size: 0.98rem;
+            display: none !important;
           }
+          .mobile-menu-btn { display: flex !important; }
           .header-logo span {
             font-size: 1.1rem !important;
           }
+          .header-logo img { margin-top: 12px !important; }
+        }
+        @media (min-width: 701px) {
+          .mobile-menu-btn { display: none !important; }
         }
         @media (max-width: 480px) {
           .header-nav {
@@ -154,12 +159,12 @@ const Header = () => {
 
         {/* LOGO */}
         <div className="header-logo">
-          <Link to="/" style={{display: 'flex', alignItems: 'center', gap: 16, marginLeft: -24}}>
-            <img src={fdnLogo3} alt="FDN TEX Logo" width={240} height="auto" style={{display: 'block'}} />
+          <Link to="/" style={{display: 'flex', alignItems: 'center', gap: 16, marginLeft: -20}}>
+            <img src={fdnLogo3} alt="Logo" width="240px" height="auto" />
           </Link>
         </div>
 
-        {/* MENÜ */}
+        {/* MASAÜSTÜ MENÜ */}
         <ul className="header-menu">
           {navLinks.map((link, i) => (
             <React.Fragment key={link.to}>
@@ -185,7 +190,6 @@ const Header = () => {
                 >
                   {link.label}
                 </Link>
-
                 {link.label === 'KATALOG' && dropdownOpen && (
                   <div
                     className="dropdown-menu"
@@ -194,17 +198,19 @@ const Header = () => {
                       top: 'calc(100% + 10px)',
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      background: 'linear-gradient(120deg, #b6d0e2 0%, #ffb3b3 50%, #4a6b8a 100%)',
+                      background: 'linear-gradient(120deg,rgb(115, 180, 223) 0%, #fff 100%)',
+                      backdropFilter: 'blur(6px)',
                       borderRadius: 18,
-                      boxShadow: '0 8px 32px 0 #2344, 0 1.5px 0 #e3e9f7',
+                      boxShadow: '0 8px 32px 0 rgba(35, 68, 68, 0.3), 0 1.5px 0 rgba(227, 233, 247, 0.5)',
                       padding: '18px 0',
                       minWidth: 260,
                       zIndex: 1000,
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'stretch',
-                      border: '1.5px solid #e3e9f7',
+                      border: '1.5px solid rgba(255,255,255,0.2)',
                       transition: 'box-shadow 0.25s',
+                      backgroundColor: 'red',
                     }}
                     onMouseEnter={handleDropdownEnter}
                     onMouseLeave={handleDropdownLeave}
@@ -250,6 +256,56 @@ const Header = () => {
             </React.Fragment>
           ))}
         </ul>
+
+        {/* MOBİL HAMBURGER */}
+        <div className="mobile-menu-btn" style={{ display: 'none', marginLeft: 'auto', zIndex: 10 }} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <div style={{ width: 32, height: 32, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }}>
+            <span style={{ width: 24, height: 3, background: '#234', borderRadius: 2, margin: '3px 0', display: 'block' }}></span>
+            <span style={{ width: 24, height: 3, background: '#234', borderRadius: 2, margin: '3px 0', display: 'block' }}></span>
+            <span style={{ width: 24, height: 3, background: '#234', borderRadius: 2, margin: '3px 0', display: 'block' }}></span>
+          </div>
+        </div>
+        {/* MOBİL MENÜ */}
+        {mobileMenuOpen && (
+          <div className="mobile-menu-dropdown" style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            background: 'linear-gradient(90deg, rgba(58,91,220,0.85) 0%, rgba(91,124,139,0.85) 60%, rgba(50,90,109,0.85) 100%)',
+            zIndex: 2000,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'opacity 0.3s',
+          }}>
+            <button onClick={() => setMobileMenuOpen(false)} style={{ position: 'absolute', top: 24, right: 24, background: 'none', border: 'none', fontSize: 32, cursor: 'pointer', color: '#234' }}>×</button>
+            {navLinks.map(link => (
+              <Link
+                key={link.to}
+                to={link.to}
+                style={{
+                  color: '#fff',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  fontSize: '1.3rem',
+                  margin: '18px 0',
+                  letterSpacing: 1,
+                  textTransform: 'uppercase',
+                  padding: '8px 0',
+                  borderBottom: location.pathname === link.to ? '2px solid #fff' : '2px solid transparent',
+                  transition: 'border 0.2s',
+                }}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        )}
+
       </nav>
     </header>
   );
