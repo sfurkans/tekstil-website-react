@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import fdnLogo3 from '../assets/fdn-logo3.png';
 
 const navLinks = [
   { to: "/katalog", label: "KATALOG" },
@@ -7,7 +8,6 @@ const navLinks = [
   { to: "/iletisim", label: "İLETİŞİM" },
 ];
 
-// Kategoriler (Categories.jsx ile aynı olmalı)
 const categories = [
   { name: 'T-SHIRT' },
   { name: 'SWEATSHIRT' },
@@ -18,7 +18,19 @@ const categories = [
   { name: 'TULUM' },
   { name: 'İŞ TAKIMI' },
 ];
-const slugify = (str) => str.toLowerCase().replace(/[^a-zçğıöşü0-9]+/g, '-').replace(/^-+|-+$/g, '').replace(/-+/g, '-');
+
+const slugify = (str) =>
+  str
+    .toLocaleLowerCase('tr-TR')
+    .replace(/[çÇ]/g, 'c')
+    .replace(/[ğĞ]/g, 'g')
+    .replace(/[ıİ]/g, 'i')
+    .replace(/[öÖ]/g, 'o')
+    .replace(/[şŞ]/g, 's')
+    .replace(/[üÜ]/g, 'u')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-+/g, '-');
 
 const Header = () => {
   const location = useLocation();
@@ -29,6 +41,7 @@ const Header = () => {
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
     setDropdownOpen(true);
   };
+
   const handleDropdownLeave = () => {
     dropdownTimeout.current = setTimeout(() => setDropdownOpen(false), 400);
   };
@@ -53,9 +66,6 @@ const Header = () => {
           z-index: 1000 !important;
           background: linear-gradient(90deg, #3a5bdc 0%, #5b7c8b 60%, #325a6d 100%);
         }
-        /* body, #root, .app-main {
-          margin-top: 90px !important;
-        } */
         .header-nav {
           display: flex;
           align-items: center;
@@ -64,12 +74,14 @@ const Header = () => {
           margin: 0 auto;
           padding: 24px 0;
           min-height: 90px;
+          position: relative;
         }
         .header-logo {
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
           min-width: 180px;
+          z-index: 1;
         }
         .header-menu {
           display: flex;
@@ -82,9 +94,6 @@ const Header = () => {
           justify-content: center;
         }
         @media (max-width: 900px) {
-          /* body, #root, .app-main {
-            margin-top: 70px !important;
-          } */
           .header-nav {
             padding: 16px 0;
             min-height: 70px;
@@ -97,9 +106,6 @@ const Header = () => {
           }
         }
         @media (max-width: 700px) {
-          /* body, #root, .app-main {
-            margin-top: 50px !important;
-          } */
           .header-nav {
             flex-direction: column;
             padding: 10px 0;
@@ -114,9 +120,6 @@ const Header = () => {
           }
         }
         @media (max-width: 480px) {
-          /* body, #root, .app-main {
-            margin-top: 36px !important;
-          } */
           .header-nav {
             padding: 4px 0;
             min-height: 36px;
@@ -134,23 +137,30 @@ const Header = () => {
           }
         }
       `}</style>
+
       <nav className="header-nav">
-        {/* Logo ve altına TEKSTİL */}
-        <div className="header-logo" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 180}}>
-          <Link to="/" style={{display: 'flex', alignItems: 'center', gap: 16}}>
-            {/* Büyük makas sembolü */}
-            <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: 'inline', verticalAlign: 'middle'}}>
-              <circle cx="15" cy="33" r="6" stroke="#ffd600" strokeWidth="3" fill="none"/>
-              <circle cx="33" cy="33" r="6" stroke="#ffd600" strokeWidth="3" fill="none"/>
-              <line x1="18" y1="30" x2="40" y2="8" stroke="#ffd600" strokeWidth="3"/>
-              <line x1="30" y1="30" x2="8" y2="8" stroke="#ffd600" strokeWidth="3"/>
-            </svg>
-            <span style={{fontWeight: 600, fontSize: '2.5rem', color: 'yellow', fontFamily: 'serif'}}>Irmak</span>
+        {/* LOGO ARKASI BEYAZ BLOK */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          bottom: 0,
+          left: -80,
+          width: 360,
+          height: '100%',
+          background: 'linear-gradient(90deg, transparent 0%, #e3ecfa 18%, #fff 38%, #fff 62%, #e3ecfa 82%, transparent 100%)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }} />
+
+        {/* LOGO */}
+        <div className="header-logo">
+          <Link to="/" style={{display: 'flex', alignItems: 'center', gap: 16, marginLeft: -24}}>
+            <img src={fdnLogo3} alt="FDN TEX Logo" width={240} height="auto" style={{display: 'block'}} />
           </Link>
-          <span style={{fontSize: '0.9rem', color: '#e0e0e0', letterSpacing: 2, marginTop: 2}}>TEKSTİL</span>
         </div>
-        {/* Menü */}
-        <ul className="header-menu" style={{display: 'flex', alignItems: 'center', gap: '60px', listStyle: 'none', margin: 0, padding: 0, flex: 1, justifyContent: 'center'}}>
+
+        {/* MENÜ */}
+        <ul className="header-menu">
           {navLinks.map((link, i) => (
             <React.Fragment key={link.to}>
               {i !== 0 && <li style={{width: 80, height: 1, background: '#b0b8c1', margin: '0 16px'}}></li>}
@@ -175,7 +185,7 @@ const Header = () => {
                 >
                   {link.label}
                 </Link>
-                {/* KATALOG için açılır menü */}
+
                 {link.label === 'KATALOG' && dropdownOpen && (
                   <div
                     className="dropdown-menu"
@@ -245,4 +255,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;

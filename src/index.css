@@ -31,26 +31,6 @@ html, body {
   font-size: 16px;
 }
 
-body::before, body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 140px;
-  z-index: 100;
-  pointer-events: none;
-  opacity: 0.55;
-  filter: blur(48px);
-}
-body::before {
-  left: 0;
-  background: linear-gradient(90deg, #3a5bdc 0%, #5b7c8b 60%, transparent 100%);
-}
-body::after {
-  right: 0;
-  background: linear-gradient(270deg, #5b7c8b 0%, #3a5bdc 60%, transparent 100%);
-}
-
 h1, h2, h3, h4, h5, h6 {
   color: var(--main-blue);
   font-family: inherit;

@@ -25,7 +25,19 @@ const Home = () => {
       >
         <section className="home-main-section" style={{width: '100%', background: '#fff', padding: '48px 0 32px 0'}}>
           <div className="home-main-grid">
-            <div className="home-title" style={{fontSize: '2.3rem', fontWeight: 400, color: '#222', lineHeight: 1.18, letterSpacing: 0.5, minWidth: 320}}>
+            <div className="home-title" style={{
+              fontSize: '2.3rem',
+              fontWeight: 400,
+              color: '#222',
+              lineHeight: 1.18,
+              letterSpacing: 0.5,
+              minWidth: 320,
+              background: 'linear-gradient(90deg, #89a9c7 0%, #e3ecfa 50%, #fff 100%)',
+              boxShadow: 'none',
+              borderRadius: '18px',
+              padding: '56px 32px',
+              display: 'inline-block',
+            }}>
               Profesyonel İş<br />Kıyafetleri ve<br />Tekstil Ürünleri:<br />Kalite, Güven ve<br />Yenilik
             </div>
             <div style={{fontSize: '1.18rem', color: '#444', lineHeight: 1.7, maxWidth: 700}}>
@@ -39,11 +51,13 @@ const Home = () => {
           <svg width="100%" height="60" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{maxWidth: '1440px', minWidth: '320px', display: 'block'}}>
             <defs>
               <linearGradient id="headerWave" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#eaf3ff" />
-                <stop offset="30%" stopColor="#b3d8fd" />
-                <stop offset="60%" stopColor="#7fc7fa" />
-                <stop offset="85%" stopColor="#aee7ff" />
-                <stop offset="100%" stopColor="#eaf3ff" />
+                <stop offset="0%" stopColor="#eaf3ff" stopOpacity="0" />
+                <stop offset="5%" stopColor="#eaf3ff" stopOpacity="1" />
+                <stop offset="30%" stopColor="#b3d8fd" stopOpacity="1" />
+                <stop offset="60%" stopColor="#7fc7fa" stopOpacity="1" />
+                <stop offset="85%" stopColor="#aee7ff" stopOpacity="1" />
+                <stop offset="95%" stopColor="#eaf3ff" stopOpacity="1" />
+                <stop offset="100%" stopColor="#eaf3ff" stopOpacity="0" />
               </linearGradient>
             </defs>
             <path d="M0 30 Q 360 60 720 30 T 1440 30 V60 H0V30Z" fill="url(#headerWave)"/>

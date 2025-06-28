@@ -157,11 +157,13 @@ const Catalog = () => {
           <svg width="100%" height="60" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{maxWidth: '1440px', minWidth: '320px', display: 'block'}}>
             <defs>
               <linearGradient id="catalogWave" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#f7faff" />
-                <stop offset="30%" stopColor="#b3d8fd" />
-                <stop offset="60%" stopColor="#7fc7fa" />
-                <stop offset="85%" stopColor="#aee7ff" />
-                <stop offset="100%" stopColor="#f7faff" />
+                <stop offset="0%" stopColor="#f7faff" stopOpacity="0" />
+                <stop offset="5%" stopColor="#f7faff" stopOpacity="1" />
+                <stop offset="30%" stopColor="#b3d8fd" stopOpacity="1" />
+                <stop offset="60%" stopColor="#7fc7fa" stopOpacity="1" />
+                <stop offset="85%" stopColor="#aee7ff" stopOpacity="1" />
+                <stop offset="95%" stopColor="#f7faff" stopOpacity="1" />
+                <stop offset="100%" stopColor="#f7faff" stopOpacity="0" />
               </linearGradient>
             </defs>
             <path d="M0 30 Q 360 60 720 30 T 1440 30 V60 H0V30Z" fill="url(#catalogWave)"/>
@@ -176,11 +178,13 @@ const Catalog = () => {
           <svg width="100%" height="60" viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{maxWidth: '1440px', minWidth: '320px', display: 'block'}}>
             <defs>
               <linearGradient id="catalogWave" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#f7faff" />
-                <stop offset="30%" stopColor="#b3d8fd" />
-                <stop offset="60%" stopColor="#7fc7fa" />
-                <stop offset="85%" stopColor="#aee7ff" />
-                <stop offset="100%" stopColor="#f7faff" />
+                <stop offset="0%" stopColor="#f7faff" stopOpacity="0" />
+                <stop offset="5%" stopColor="#f7faff" stopOpacity="1" />
+                <stop offset="30%" stopColor="#b3d8fd" stopOpacity="1" />
+                <stop offset="60%" stopColor="#7fc7fa" stopOpacity="1" />
+                <stop offset="85%" stopColor="#aee7ff" stopOpacity="1" />
+                <stop offset="95%" stopColor="#f7faff" stopOpacity="1" />
+                <stop offset="100%" stopColor="#f7faff" stopOpacity="0" />
               </linearGradient>
             </defs>
             <path d="M0 30 Q 360 60 720 30 T 1440 30 V60 H0V30Z" fill="url(#catalogWave)"/>
