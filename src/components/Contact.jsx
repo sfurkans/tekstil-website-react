@@ -67,6 +67,33 @@ const Contact = () => {
         .contact-form-textarea:focus {
           border: 1.5px solid #5b7c8b;
         }
+        .maps-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+          margin-top: 32px;
+        }
+        .map-card {
+          background: #fff;
+          border-radius: 12px;
+          box-shadow: 0 4px 24px #b3c6e633;
+          border: 2px solid #e3ecfa;
+          overflow: hidden;
+        }
+        .map-card h4 {
+          background: linear-gradient(135deg, #5b7c8b 0%, #325a6d 100%);
+          color: #fff;
+          margin: 0;
+          padding: '16px 20px';
+          font-size: 1.1rem;
+          font-weight: 600;
+          text-align: center;
+        }
+        .map-iframe {
+          width: 100%;
+          height: 300px;
+          border: none;
+        }
         @media (max-width: 700px) {
           .contact-form-grid {
             grid-template-columns: 1fr;
@@ -74,6 +101,10 @@ const Contact = () => {
           }
           .contact-form-textarea {
             max-width: 100%;
+          }
+          .maps-container {
+            grid-template-columns: 1fr;
+            gap: 16px;
           }
         }
         @media (max-width: 480px) {
@@ -91,6 +122,9 @@ const Contact = () => {
             flex-direction: column !important;
             gap: 12px !important;
             align-items: stretch !important;
+          }
+          .map-iframe {
+            height: 250px;
           }
         }
       `}</style>
@@ -191,6 +225,51 @@ const Contact = () => {
         </div>
         {sent && <div style={{ color: 'green', textAlign: 'center', fontWeight: 500 }}>Mesajınız gönderildi! (örnek)</div>}
       </form>
+
+      {/* Harita Bölümü */}
+      <div style={{
+        maxWidth: 900,
+        margin: '48px auto 0 auto',
+        padding: '0 16px'
+      }}>
+        <h3 style={{
+          textAlign: 'center',
+          fontWeight: 600,
+          fontSize: '1.8rem',
+          color: '#17445e',
+          marginBottom: '24px',
+          letterSpacing: 1
+        }}>Ofislerimizin Konumu</h3>
+        
+        <div className="maps-container">
+          {/* İzmir Ofisi */}
+          <div className="map-card">
+            <h4 style={{ padding: '16px 20px' }}>İZMİR OFİSİ</h4>
+            <iframe
+              className="map-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d852.2935789920364!2d27.135961301771957!3d38.41312563760907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbeb062e8cd353%3A0xe71ecb382cd1d8d7!2sStarbucks!5e0!3m2!1str!2str!4v1754587006312!5m2!1str!2str"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Fabrik Tekstil İzmir"
+            ></iframe>
+          </div>
+
+          {/* Manisa Ofisi */}
+          <div className="map-card">
+            <h4 style={{ padding: '16px 20px' }}>MANİSA OFİSİ</h4>
+            <iframe
+              className="map-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3127.1234567890123!2d27.4289!3d38.6191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDM3JzA4LjgiTiAyN8KwMjUnNDQuMCJF!5e0!3m2!1str!2str!4v1234567890123"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Fabrik Tekstil Manisa"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
       {/* Mavi şeritli iletişim kutusu */}
       <div style={{
         width: '100%',
@@ -218,7 +297,7 @@ const Contact = () => {
           }} className="adres-flex">
             <div style={{ minWidth: 260, flex: 1, marginBottom: 24 }}>
               <div style={{ fontWeight: 700, letterSpacing: 1 }}>İZMİR</div>
-              <div style={{ color: '#e0e0e0' }}>MTK Sitesi 6013 Ada 5746/4 Sk. No:3<br />Bornova İZMİR</div>
+              <div style={{ color: '#e0e0e0' }}>Kahramandere Mah, 767. Sk. No:13/A<br />35310 Güzelbahçe/İzmir</div>
               <div style={{ color: '#b0bec5' }}>Telefon &nbsp;: <span style={{ color: '#fff' }}>+90 232 431 00 94 – 95</span></div>
             </div>
             <div style={{ minWidth: 260, flex: 1, marginBottom: 24 }}>
